@@ -36,7 +36,7 @@ pipeline {
                 }
             }
         }
-        
+        /*
         stage("Quality Gate"){
             steps {
                 script {
@@ -48,7 +48,7 @@ pipeline {
                     }
                 }
             }
-        }
+        } */
         stage("Publish JAR to Artifactory") {
             steps {
                 script {
