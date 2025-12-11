@@ -1,6 +1,6 @@
 def registry = 'https://trialpkb5f4.jfrog.io'
 def imageName = 'trialpkb5f4.jfrog.io/valaxy-docker-local/ttrend'
-def version   = '2.1.2'
+def version   = '2.1.3'
 
 pipeline {
     agent {
@@ -27,7 +27,7 @@ pipeline {
                 echo "------------- Unit Tests Completed -------------"
             }
         }
-        /*
+        
         stage('SonarQube analysis') {
             environment {
                 scannerHome = tool 'devopsmeister-sonar-scanner'
@@ -37,7 +37,7 @@ pipeline {
                     sh "${scannerHome}/bin/sonar-scanner"
                 }
             }
-        }*/
+        }
         /*
         stage("Quality Gate"){
             steps {
