@@ -102,6 +102,7 @@ pipeline {
             steps {
                 script {
                     echo '<--------------- Deploy to Kubernetes Started --------------->'
+                    sh 'chmod +x deploy.sh'
                     sh './deploy.sh'
                     echo '<--------------- Deploy to Kubernetes Ended ----------------->'
                 }
