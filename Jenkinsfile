@@ -10,9 +10,19 @@ environment {
     stages {
         stage("Build"){
             steps {
-                sh 'mvn clean deploy'
+                echo "------------- Building the Application -------------"
+                sh 'mvn clean deploy -Dmaven.test.skip=true'
+                echo "------------- Build Completed ---------------------"
             }
         }
+
+        stage('Unit Tests') {
+    steps {
+        echo "------------- Running Unit Tests -------------"
+        sh 'mvn surefire-report:report'
+        echo "------------- Unit Tests Completed -------------"
+    }
+    }
     
 
     stage('SonarQube analysis') {
