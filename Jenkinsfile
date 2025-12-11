@@ -1,4 +1,4 @@
-def registry = 'https://trialpkb5f4.jfrog.io/'
+def registry = 'https://trialpkb5f4.jfrog.io'
 
 pipeline {
     agent {
@@ -59,7 +59,7 @@ pipeline {
                           "files": [
                             {
                               "pattern": "jarstaging/(*)",
-                              "target": "libs-release-local/{1}",
+                              "target": "devops-meister-libs-release-local/{1}",
                               "flat": "false",
                               "props" : "${properties}",
                               "exclusions": [ "*.sha1", "*.md5"]
