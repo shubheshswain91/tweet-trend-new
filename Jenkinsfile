@@ -10,7 +10,7 @@ environment {
     stages {
         stage("Build"){
             steps {
-                sh 'mvn -Dsurefire.argLine="-Xmx1024m -Xms512m" clean deploy'
+                sh 'mvn clean deploy'
             }
         }
     }
