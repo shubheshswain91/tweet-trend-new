@@ -99,9 +99,9 @@ pipeline {
         }
         stage("Deploy") {
             steps {
-                echo "------------- Helm Deploy Started -------------"
+                echo "<------------- Helm Deploy Started ------------->"
                 sh 'helm install ttrend ttrend-0.1.0.tgz'
-                echo "------------- Helm deploy Ends ---------------------"
+                echo "<------------- Helm deploy Ends --------------------->"
             }
         }
         
