@@ -97,16 +97,13 @@ pipeline {
                 }
             }
         }
-
-        stage("Deploy to Kubernetes") {
+        stage("Deploy") {
             steps {
-                script {
-                    echo '<--------------- Deploy to Kubernetes Started --------------->'
-                    sh 'chmod +x deploy.sh'
-                    sh './deploy.sh'
-                    echo '<--------------- Deploy to Kubernetes Ended ----------------->'
-                }
+                echo "------------- Helm Deploy Started -------------"
+                sh 'helm install ttrend ttrend-0.1.0.tgz'
+                echo "------------- Helm deploy Ends ---------------------"
             }
         }
+        
     }
 }
